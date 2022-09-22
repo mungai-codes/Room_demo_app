@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.mungaicodes.roomdemoapp.ListFragment"
+        android:name="com.mungaicodes.roomdemoapp.fragments.list.ListFragment"
         android:label="List Users"
         tools:layout="@layout/fragment_list" >
         <action

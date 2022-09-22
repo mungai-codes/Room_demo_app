@@ -51,7 +51,7 @@ class AddFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(firsname: String, lastName: String, age: Editable): Boolean {
-        return !(TextUtils.isEmpty(firsname) && TextUtils.isEmpty(lastName) && TextUtils.isEmpty(age))
+    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean {
+        return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && TextUtils.isEmpty(age))
     }
 }
