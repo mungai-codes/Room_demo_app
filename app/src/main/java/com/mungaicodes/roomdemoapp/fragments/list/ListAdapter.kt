@@ -9,14 +9,12 @@ import com.mungaicodes.roomdemoapp.R
 import com.mungaicodes.roomdemoapp.model.User
 import kotlinx.android.synthetic.main.custom_row.view.*
 
-class ListAdapter() : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     private var userList = emptyList<User>()
 //    private val layoutInflater = LayoutInflater.from(parent.context)
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    }
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 //        val theView = layoutInflater.inflate(R.layout.custom_row, parent, false)

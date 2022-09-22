@@ -1,11 +1,10 @@
 package com.mungaicodes.roomdemoapp.fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -41,6 +40,8 @@ class UpdateFragment : Fragment() {
             updateItem()
         }
 
+        setHasOptionsMenu(true)
+
         return view
     }
 
@@ -58,7 +59,11 @@ class UpdateFragment : Fragment() {
 
             Toast.makeText(requireContext(), "Successfully updated user", Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(requireContext(), "Update Failure, fill all the fields!!!", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(),
+                "Update Failure, fill all the fields!!!",
+                Toast.LENGTH_LONG
+            ).show()
 
         }
     }
@@ -68,6 +73,34 @@ class UpdateFragment : Fragment() {
         return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && TextUtils.isEmpty(
             age
         ))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete) {
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("yes") { _, _ ->
+            viewModel.deleteUser(args.currentUser)
+            Toast.makeText(
+                requireContext(),
+                "Successfully removed: ${args.currentUser.firstName}",
+                Toast.LENGTH_LONG
+            ).show()
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+        }
+        builder.setNegativeButton("No") { _, _ -> }
+        builder.setTitle("Delete: ${args.currentUser.firstName}")
+        builder.setMessage("are u sure you want to delete: ${args.currentUser.firstName}")
+        builder.create().show()
     }
 
 }

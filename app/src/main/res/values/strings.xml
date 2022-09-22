@@ -8,4 +8,5 @@
     <string name="age">Age</string>
     <string name="add_button">Add</string>
     <string name="update_button">Update</string>
+    <string name="delete">Delete</string>
 </resources>
