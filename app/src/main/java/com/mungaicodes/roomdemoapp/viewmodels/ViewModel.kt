@@ -1,9 +1,12 @@
-package com.mungaicodes.roomdemoapp.data
+package com.mungaicodes.roomdemoapp.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.mungaicodes.roomdemoapp.data.Database
+import com.mungaicodes.roomdemoapp.repo.Repository
+import com.mungaicodes.roomdemoapp.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -21,6 +24,12 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     fun addUser(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)
+        }
+    }
+
+    fun updateUser(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateUser(user)
         }
     }
 

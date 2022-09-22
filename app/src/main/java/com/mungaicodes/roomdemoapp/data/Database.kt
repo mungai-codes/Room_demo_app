@@ -3,6 +3,7 @@ package com.mungaicodes.roomdemoapp.data
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.mungaicodes.roomdemoapp.model.User
 
 @androidx.room.Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class Database : RoomDatabase() {

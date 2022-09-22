@@ -9,18 +9,33 @@
         android:id="@+id/listFragment"
         android:name="com.mungaicodes.roomdemoapp.fragments.list.ListFragment"
         android:label="List Users"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_listFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.mungaicodes.roomdemoapp.AddFragment"
+        android:name="com.mungaicodes.roomdemoapp.fragments.add.AddFragment"
         android:label="Add User"
-        tools:layout="@layout/fragment_add" >
+        tools:layout="@layout/fragment_add">
         <action
             android:id="@+id/action_addFragment_to_listFragment"
             app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.mungaicodes.roomdemoapp.fragments.update.UpdateFragment"
+        android:label="Update User"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.mungaicodes.roomdemoapp.model.User" />
     </fragment>
 </navigation>

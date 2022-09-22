@@ -1,6 +1,8 @@
-package com.mungaicodes.roomdemoapp.data
+package com.mungaicodes.roomdemoapp.repo
 
 import androidx.lifecycle.LiveData
+import com.mungaicodes.roomdemoapp.data.UserDao
+import com.mungaicodes.roomdemoapp.model.User
 
 class Repository(private val userDao: UserDao) {
 
@@ -8,6 +10,10 @@ class Repository(private val userDao: UserDao) {
 
     suspend fun addUser(user: User) {
         userDao.addUser(user)
+    }
+
+    suspend fun updateUser(user: User) {
+        userDao.updateUser(user)
     }
 
 }

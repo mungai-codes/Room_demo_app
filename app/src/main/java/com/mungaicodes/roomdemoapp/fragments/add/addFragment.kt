@@ -1,4 +1,4 @@
-package com.mungaicodes.roomdemoapp
+package com.mungaicodes.roomdemoapp.fragments.add
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,8 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.mungaicodes.roomdemoapp.data.User
-import com.mungaicodes.roomdemoapp.data.ViewModel
+import com.mungaicodes.roomdemoapp.R
+import com.mungaicodes.roomdemoapp.model.User
+import com.mungaicodes.roomdemoapp.viewmodels.ViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
@@ -28,7 +29,7 @@ class AddFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
-        view.add_button.setOnClickListener {
+        view.update_button.setOnClickListener {
             insertDataToDataBase()
         }
 
@@ -36,9 +37,9 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDataBase() {
-        val firstName = user_first_name.text.toString()
-        val lastName = user_last_name.text.toString()
-        val age = user_age.text
+        val firstName = update_first_name.text.toString()
+        val lastName = update_last_name.text.toString()
+        val age = update_age.text
 
         if (inputCheck(firstName, lastName, age)) {
             val user = User(0, firstName, lastName, Integer.parseInt(age.toString()))

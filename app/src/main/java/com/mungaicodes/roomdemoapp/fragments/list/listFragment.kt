@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mungaicodes.roomdemoapp.R
-import com.mungaicodes.roomdemoapp.data.ViewModel
+import com.mungaicodes.roomdemoapp.viewmodels.ViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class ListFragment : Fragment() {
