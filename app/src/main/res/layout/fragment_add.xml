@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFragment">
+
+
+    <EditText
+        android:id="@+id/user_first_name"
+        android:layout_width="330dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="124dp"
+        android:ems="10"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/user_last_name"
+        android:layout_width="332dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/last_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/user_first_name"
+        app:layout_constraintStart_toStartOf="@+id/user_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_first_name" />
+
+    <EditText
+        android:id="@+id/user_age"
+        android:layout_width="336dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/age"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/user_last_name"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintTop_toBottomOf="@+id/user_last_name" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="331dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/add_button"
+        app:layout_constraintEnd_toEndOf="@+id/user_age"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintTop_toBottomOf="@+id/user_age" />
+</androidx.constraintlayout.widget.ConstraintLayout>
